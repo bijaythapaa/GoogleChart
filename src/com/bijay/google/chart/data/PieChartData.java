@@ -1,4 +1,4 @@
-package in.webtuts.google.chart.data;
+package com.bijay.google.chart.data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +9,13 @@ public class PieChartData {
 
 	static {
 		pieDataList = new ArrayList<PieChartData.KeyValue>();
-		pieDataList.add(new KeyValue("Russia", "17098242"));
-		pieDataList.add(new KeyValue("Canada", "9984670"));
-		pieDataList.add(new KeyValue("USA", "9826675"));
-		pieDataList.add(new KeyValue("China", "9596961"));
-		pieDataList.add(new KeyValue("Brazil", "8514877"));
-		pieDataList.add(new KeyValue("Australia", "7741220"));
-		pieDataList.add(new KeyValue("India", "3287263"));
+		pieDataList.add(new KeyValue("Dhading", "1926"));
+		pieDataList.add(new KeyValue("Kathmandu", "395"));
+		pieDataList.add(new KeyValue("Gorkha", "3610"));
+		pieDataList.add(new KeyValue("Nuwakot", "1121"));
+		pieDataList.add(new KeyValue("Rasuwa", "1544"));
+		pieDataList.add(new KeyValue("Bhaktapur", "119"));
+		pieDataList.add(new KeyValue("Lalitpur", "395"));
 	}
 
 	public static List<KeyValue> getPieDataList() {

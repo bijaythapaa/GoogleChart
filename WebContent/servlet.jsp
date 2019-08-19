@@ -6,14 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Google Chart - Servlet 3</title>
-<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
-<script type="text/javascript"
-	src="resources/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
-
-<script type="text/javascript" src="resource/js/jsapi.js"> </script>
+<!-- <script type="text/javascript" src="resources/js/jsapi.js"> </script> -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-	//Load the Visualization API and the piechart package.
+	/* Load the Visualization API and the piechart package. */
 	google.load('visualization', '1.0', {
 		'packages' : [ 'corechart' ]
 	});
@@ -30,19 +26,15 @@
 		var data = new google.visualization.DataTable();
 		data.addColumn('string', 'Topping');
 		data.addColumn('number', 'Slices');
-		/* data.addRows([
-		            <c:forEach items="${pieDataMap}" var="entry">
-		                [ "${entry.key}", "${entry.value}"" ],
-		            </c:forEach>
-		            ]); */
-		            
-		 var data = new google.visualization.arrayToDataTable([[ 'Country', 'Area(square km)' ],
-				<c:forEach items="${pieDataList}" var="e">
-				["${e.key}", "${e.value}"] </c:forEach> ]);
+		data.addRows([
+		<c:forEach items="${pieDataList}" var="entry">
+		[ '${entry.key}', ${entry.value} ],
+		</c:forEach>
+		]);
 
 		// Set chart options
 		var options = {
-			'title' : 'Area-wise Top Seven Countries in the World', //title which will be shown right above the Google Pie Chart
+			'title' : 'Area-wise Top Districts of State Three', //title which will be shown right above the Google Pie Chart
 			is3D : true, //render Google Pie Chart as 3D
 			pieSliceText : 'label', //on mouse hover show label or name of the Country
 			tooltip : {
@@ -63,6 +55,12 @@
 <body>
 	<div style="width: 600px;">
 		<div id="chart_div"></div>
+
+		<%-- <p>Printing data</p>
+		<c:forEach items="${pieDataList}" var="entry">
+			<p>${entry.key},${entry.value}</p>
+		</c:forEach> --%>
+
 	</div>
 </body>
 </html>
